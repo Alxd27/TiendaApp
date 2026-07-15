@@ -6,9 +6,11 @@ namespace TiendaApp.Controllers;
 public class ProductosController : Controller
 {
 private readonly ApplicationDbContext _context;
-// INYECCIÓN DE DEPENDENCIAS (DIP de SOLID): No instanciamos el contexto, lorecibimos.
-public ProductosController(ApplicationDbContext context) => _context = context;
-// READ: Obtener lista (Usamos Async para escalabilidad)
+
+public ProductosController(ApplicationDbContext context)
+{
+    _context = context;
+}
 public async Task<IActionResult> Index()
 {
 // LINQ: AsNoTracking mejora rendimiento en solo lectura (Código Limpio)
