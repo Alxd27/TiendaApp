@@ -117,4 +117,12 @@ public class ProductosController : Controller
 
         return View(producto);
     }
+
+    [Route("promociones-del-mes/barrio-norte")]
+public IActionResult OfertasEspeciales()
+{
+    ViewData["Message"] = "Ofertas exclusivas para los vecinos del barrio.";
+
+    return View();
+}
 }
